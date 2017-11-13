@@ -40,8 +40,8 @@ class Group
         $name = preg_replace('/[^\w\s-:]/','',$name);
         $description = preg_replace('/[^\w\s-:]/','',$description);
         
-        if ($this->exists_name($name)) 
-            return array('success'=>false, 'message'=>_("Group already exists"));
+        //if ($this->exists_name($name)) 
+        //    return array('success'=>false, 'message'=>_("Group already exists"));
     
         $stmt = $this->mysqli->prepare("INSERT INTO groups (name,description) VALUES (?,?)");
         $stmt->bind_param("ss", $name, $description);
